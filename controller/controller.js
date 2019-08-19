@@ -16,7 +16,7 @@ router.get("/scrape", function(req, res) {
   request("http://www.theverge.com", function(error, response, html) {
     var $ = cheerio.load(html);
     var titlesArray = [];
-
+s
     $(".c-entry-box--compact__title").each(function(i, element) {
       var result = {};
 
@@ -85,7 +85,7 @@ router.get("/clearAll", function(req, res) {
       console.log("removed all articles");
     }
   });
-  res.redirect("/articles-json");
+  res.redirect("/articles");
 });
 
 router.get("/readArticle/:id", function(req, res) {
